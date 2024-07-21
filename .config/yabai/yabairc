@@ -1,0 +1,158 @@
+#!/usr/bin/env sh
+
+#╭────────────────────────────╮
+#│ Loading scripting addition │
+#╰────────────────────────────╯
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+#╔════════════════════════════════════════╗
+#║ ╭────────────────────────────────────╮ ║
+#║ │          Padding and Gaps          │ ║
+#║ ╰────────────────────────────────────╯ ║
+#╚════════════════════════════════════════╝
+
+#╭─────────────────────╮
+#│ Main Padding Values │
+#╰─────────────────────╯
+
+yabai -m config top_padding 16
+yabai -m config bottom_padding 16
+yabai -m config left_padding 46
+yabai -m config right_padding 46
+yabai -m config window_gap 28
+
+#╭────────────────────╮
+#│ Sketchybar Padding │
+#╰────────────────────╯
+
+yabai -m config external_bar all:44:0
+
+#╔═══════════════════════════════════════════════════╗
+#║ ╭───────────────────────────────────────────────╮ ║
+#║ │          Space and Window Management          │ ║
+#║ ╰───────────────────────────────────────────────╯ ║
+#╚═══════════════════════════════════════════════════╝
+
+#╭────────╮
+#│ Layout │
+#╰────────╯
+
+yabai -m config layout bsp
+yabai -m config auto_balance on
+
+#╭────────────────╮
+#│ Window Opacity │
+#╰────────────────╯
+
+yabai -m config window_opacity on
+yabai -m config active_window_opacity 0.99
+yabai -m config normal_window_opacity 0.87
+
+#╭────────────────╮
+#│ Window Shadows │
+#╰────────────────╯
+
+yabai -m config window_shadow on
+
+#╭───────────────────────────╮
+#│ Space 2 Defaults to Stack │
+#╰───────────────────────────╯
+
+yabai -m config --space 2 layout stack
+
+#╔══════════════════════════════════════╗
+#║ ╭──────────────────────────────────╮ ║
+#║ │          Mouse Settings          │ ║
+#║ ╰──────────────────────────────────╯ ║
+#╚══════════════════════════════════════╝
+
+#╭────────────────────╮
+#│ Mouse modifier key │
+#╰────────────────────╯
+
+yabai -m config mouse_modifier fn
+
+#╭──────────────────╮
+#│ Modifier actions │
+#╰──────────────────╯
+
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+#╭───────────╮
+#│ Autofocus │
+#╰───────────╯
+
+yabai -m config focus_follows_mouse autoraise
+yabai -m config mouse_follows_focus on
+
+#╔═════════════════════════════╗
+#║ ╭─────────────────────────╮ ║
+#║ │          Rules          │ ║
+#║ ╰─────────────────────────╯ ║
+#╚═════════════════════════════╝
+
+#╭──────────────────╮
+#│ Non-Managed Apps │
+#╰──────────────────╯
+
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^App Eraser$" manage=off
+yabai -m rule --add app="^DaisyDisk$" manage=off
+yabai -m rule --add app="^LuLu$" manage=off
+yabai -m rule --add app="^Motrix$" manage=off
+yabai -m rule --add app="^Pearcleaner$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^mpv$" manage=off
+
+#╭─────────────────────╮
+#│ Arc Settings Window │
+#╰─────────────────────╯
+
+yabai -m rule --add app="^Arc$" title="matthew" manage=off
+
+#╭─────────────────────────────────────────╮
+#│ Disabling Window Opacity for Fusion 360 │
+#╰─────────────────────────────────────────╯
+
+yabai -m rule --add app="$Fusion^" opacity=1.0
+
+#╔═══════════════════════════════════╗
+#║ ╭───────────────────────────────╮ ║
+#║ │          Scratchpads          │ ║
+#║ ╰───────────────────────────────╯ ║
+#╚═══════════════════════════════════╝
+
+yabai -m rule --add app="^Bitwarden$"  scratchpad=bitwarden grid=11:11:1:1:9:9
+yabai -m rule --add app="^Discord$" title!="^Discord Updater$" scratchpad=discord grid=11:11:1:1:9:9
+yabai -m rule --add app="^Home Assistant$"  scratchpad=haoss grid=11:11:1:1:9:9
+yabai -m rule --add app="^Messages$"  scratchpad=messages grid=11:11:1:1:9:9
+yabai -m rule --add app="^Finder$" title="^Trash$" scratchpad=trash grid=11:11:1:1:9:9
+
+#╔════════════════════════════╗
+#║ ╭────────────────────────╮ ║
+#║ │          Misc          │ ║
+#║ ╰────────────────────────╯ ║
+#╚════════════════════════════╝
+
+#╭──────────────────────╮
+#│ Hiding MacOS Menubar │
+#╰──────────────────────╯
+
+yabai -m config menubar_opacity 0.0
+
+#╭────────────╮
+#│ Animations │
+#╰────────────╯
+
+yabai -m config window_animation_duration 0.3
+yabai -m config window_animation_easing ease_in_out_quint
+
+#╭───────────────────╮
+#│ Sketchybar Events │
+#╰───────────────────╯
+
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus &> /dev/null"
+yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change &> /dev/null"
