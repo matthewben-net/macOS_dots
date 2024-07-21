@@ -1,0 +1,15 @@
+snippet rcsubcom "Box"
+`!p snip.rv = '#╭' + '─' * (len(t[1]) + 2) + '╮'`
+#│ $1 │
+`!p snip.rv = '#╰' + '─' * (len(t[1]) + 2) + '╯'`
+$0
+endsnippet
+
+snippet rcmaincom "Box"
+`!p snip.rv = '#╔' + '═' * (len(t[1]) + 22) + '╗'`
+`!p snip.rv = '#║╭' + '─' * (len(t[1]) + 20) + '╮║'`
+#║│          $1          │║
+`!p snip.rv = '#║╰' + '─' * (len(t[1]) + 20) + '╯║'`
+`!p snip.rv = '#╚' + '═' * (len(t[1]) + 22) + '╝'`
+$0
+endsnippet

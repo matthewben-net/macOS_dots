@@ -1,0 +1,171 @@
+snippet box "Box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet ans "Answer Box" bA
+\begin{center}
+	\tcbox[sharp corners]{$1}
+\end{center}
+$0
+endsnippet
+
+snippet auth "Author" A
+\author{Matthew Bennett}
+$0
+endsnippet
+
+snippet title "Title Snippet" bA
+\title{$1}
+$0
+endsnippet
+
+snippet bb "Big Break" bA
+\bigbreak
+$0
+endsnippet
+
+snippet dm "Math" bA
+\[
+$1
+\]
+$0
+endsnippet
+
+snippet sol "Insert title before skipping to input" bA
+\subsection{$1}
+\begin{sol}
+	$2
+\end{sol}
+endsnippet
+
+snippet tt "The \texttt{} command for typewriter-style font" bA
+\texttt{$1}$0
+endsnippet
+
+# Prevent fraction expansion in words containing "ff"
+snippet "(^|[^a-zA-Z])ff" "\frac{}{}" rA
+`!p snip.rv = match.group(1)`\frac{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
+# Inline Math
+snippet "(^|[^a-zA-Z])im" "Inline LaTeX math" rA
+`!p snip.rv = match.group(1)`\$ ${1:${VISUAL:}} \$$0
+endsnippet
+
+# Units
+snippet "(^|[^a-zA-Z])un" "\unit{}" rA
+`!p snip.rv = match.group(1)`\unit{${1:${VISUAL:}}}$0
+endsnippet
+
+# Fractional Units
+snippet "(^|[^a-zA-Z])uf" "\unitfrac{}{}" rA
+`!p snip.rv = match.group(1)`\unitfrac{${1:${VISUAL:}}}{$2}$0
+endsnippet
+
+snippet lp "Left Parenthesis" A
+\left( $0
+endsnippet
+
+snippet rp "Right Parenthesis" A
+\right) $0
+endsnippet
+
+snippet eq "Left aligned equation block" bA
+	\begin{fleqn}
+	\begin{align*}
+		$1 & $2
+	\end{align*}
+	\end{fleqn}
+$0
+endsnippet
+
+snippet aeq "Center aligned equation for use with arrows" bA
+\begin{equation}
+	\setlength{\jot}{10pt}
+	\begin{WithArrows}
+
+$1
+
+	\end{WithArrows}
+	\nonumber
+\end{equation}
+$0
+endsnippet
+snippet qs "Question Block" bA
+\lhead{Chapter $1 Homework Part $2}
+\pdfbookmark{Problem $3}{Problem $3}
+	\begin{qs}[]{$3}
+		$4
+	\end{qs}
+\bigbreak
+$0
+endsnippet
+
+snippet Arr "Arrow for the WithArrows package" A
+	\Arrow[]{$1} \\\
+	$0
+endsnippet
+
+snippet ( "Create opened and closed parenthesis without having to type the back key" A
+($1)$0
+endsnippet
+
+snippet "(^|[^a-zA-Z]){" "Create opened and closed brackets without having to type the back key" rA
+{$1}$0
+endsnippet
+
+snippet giv "Given block with tabular input" bA
+
+\begin{given}
+	\begin{center}
+		\begin{tabular}{c|c}
+			$1 & $2 \\\
+			$3 & $4
+		\end{tabular}
+	\end{center}
+\end{given}
+\bigbreak
+$0
+endsnippet
+
+snippet qnum "Lettered bullet point list, ie a, b c etc" bA
+	\begin{enumerate}[label=\alph*)]
+		\item $1
+		\item $2
+		\item $3 
+\end{enumerate}
+$0
+endsnippet
+
+snippet gfx "Centered picture block with default scale of 0.6" bA
+
+\begin{center}
+	\includegraphics[scale=0.6]{$1}
+\end{center}
+\bigbreak
+$0
+endsnippet
+
+snippet hdr "Centered bold text using the paragraph command" bA
+\paragraph*{$1}
+$0
+endsnippet
+
+snippet lheadrq "Left heading item for homework question" bA
+\lhead{$1}
+$0
+endsnippet
+
+snippet daash "instead of using the standard -, this will input an endash making units easier to read. Should mainly be used in math mode" A
+\text{\textendash}$0
+endsnippet
+
