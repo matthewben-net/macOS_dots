@@ -1,0 +1,158 @@
+#╔════════════════════════════════════════╗
+#║ ╭────────────────────────────────────╮ ║
+#║ │          Space Navigation          │ ║
+#║ ╰────────────────────────────────────╯ ║
+#╚════════════════════════════════════════╝
+
+#╭────────────────────────────────────╮
+#│ Focuses the desired numbered space │
+#╰────────────────────────────────────╯
+
+ctrl - 1 : yabai -m space --focus 1
+ctrl - 2 : yabai -m space --focus 2
+ctrl - 3 : yabai -m space --focus 3
+ctrl - 4 : yabai -m space --focus 4
+ctrl - 5 : yabai -m space --focus 5
+ctrl - 6 : yabai -m space --focus 6
+ctrl - 7 : yabai -m space --focus 7
+ctrl - 8 : yabai -m space --focus 8
+ctrl - 9 : yabai -m space --focus 9
+
+#╭──────────────────────────────────────────────╮
+#│ Move left and right between available spaces │
+#╰──────────────────────────────────────────────╯
+
+ctrl - left : yabai -m space --focus prev
+ctrl - right : yabai -m space --focus next
+
+#╔════════════════════════════════════════╗
+#║ ╭────────────────────────────────────╮ ║
+#║ │          Space Management          │ ║
+#║ ╰────────────────────────────────────╯ ║
+#╚════════════════════════════════════════╝
+
+#╭────────────────────╮
+#│ Create a new space │
+#╰────────────────────╯
+
+cmd + ctrl + shift - n : yabai -m space --create
+
+#╔════════════════════════════════════════╗
+#║ ╭────────────────────────────────────╮ ║
+#║ │          Managing Windows          │ ║
+#║ ╰────────────────────────────────────╯ ║
+#╚════════════════════════════════════════╝
+
+#╭──────────────────────────────────────────────────────────────╮
+#│ Sends the currently highlighted window to the numbered space │
+#╰──────────────────────────────────────────────────────────────╯
+
+cmd + ctrl - 1 : yabai -m window --space 1
+cmd + ctrl - 2 : yabai -m window --space 2
+cmd + ctrl - 3 : yabai -m window --space 3
+cmd + ctrl - 4 : yabai -m window --space 4
+cmd + ctrl - 5 : yabai -m window --space 5
+cmd + ctrl - 6 : yabai -m window --space 6
+cmd + ctrl - 7 : yabai -m window --space 7
+cmd + ctrl - 8 : yabai -m window --space 8
+cmd + ctrl - 9 : yabai -m window --space 9
+
+#╭───────────────────────────────────────────────────────────────────────────────────╮
+#│ Sends the currently hilighted window to the numbered space and focuses that space │
+#╰───────────────────────────────────────────────────────────────────────────────────╯
+
+cmd + ctrl + shift - 1 : yabai -m window --space 1 && yabai -m space --focus 1
+cmd + ctrl + shift - 2 : yabai -m window --space 2 && yabai -m space --focus 2
+cmd + ctrl + shift - 3 : yabai -m window --space 3 && yabai -m space --focus 3
+cmd + ctrl + shift - 4 : yabai -m window --space 4 && yabai -m space --focus 4
+cmd + ctrl + shift - 5 : yabai -m window --space 5 && yabai -m space --focus 5
+cmd + ctrl + shift - 6 : yabai -m window --space 6 && yabai -m space --focus 6
+cmd + ctrl + shift - 7 : yabai -m window --space 7 && yabai -m space --focus 7
+cmd + ctrl + shift - 8 : yabai -m window --space 8 && yabai -m space --focus 8
+cmd + ctrl + shift - 9 : yabai -m window --space 9 && yabai -m space --focus 9
+
+#╭───────────────────────────────────────────────────────────────────────╮
+#│ Use the ⌘ + ` shortcut to cycle between windows in the current space. │
+#│The built-in keyboard shortcut should be disabled in System Settings.  │
+#╰───────────────────────────────────────────────────────────────────────╯
+
+cmd - 0x32 : yabai -m window --focus next || yabai -m window --focus first
+
+#╭──────────────────────────────────────────────────────────────╮
+#│ Move the currently active window position up/down/left/right │
+#╰──────────────────────────────────────────────────────────────╯
+
+ctrl + shift - left : yabai -m window --swap west
+ctrl + shift - right: yabai -m window --swap east
+ctrl + shift - up : yabai -m window --swap north
+ctrl + shift - down : yabai -m window --swap south
+
+#╭─────────────────────╮
+#│ Toggle window float │
+#╰─────────────────────╯
+
+ctrl + shift - space : yabai -m window --toggle float --grid 4:4:1:1:2:2 && sketchybar --trigger window_state_change
+
+#╭────────────────────────╮
+#│ Toggle fullscreen-zoom │
+#╰────────────────────────╯
+
+ctrl + shift - z : yabai -m window --toggle zoom-fullscreen && sketchybar --trigger window_state_change
+
+#╭──────────────────────────────────────────────────────────╮
+#│ Centers and resizes the currently active window.         │
+#│ Useful for recentering scratchpads that have been moved. │
+#╰──────────────────────────────────────────────────────────╯
+
+hyper - c : yabai -m window --window --grid 11:11:1:1:9:9
+
+#╭───────────────────╮
+#│ Yabai scratchpads │
+#╰───────────────────╯
+
+hyper - b : yabai -m window --toggle bitwarden || open -a Bitwarden
+hyper - d : yabai -m window --toggle discord || open -a Discord
+hyper - h : yabai -m window --toggle haoss || open -a Home\ Assistant
+hyper - m : yabai -m window --toggle messages || open -a Messages
+hyper - t : yabai -m window --toggle btop_monitor || ~/.scripts/skhd/create_btop_scratchpad.sh
+
+#╔════════════════════════════════════════╗
+#║ ╭────────────────────────────────────╮ ║
+#║ │          Stack Management          │ ║
+#║ ╰────────────────────────────────────╯ ║
+#╚════════════════════════════════════════╝
+
+#╭──────────────────────────────────────────────────────╮
+#│ Cycle between windows in the currently focused stack │
+#╰──────────────────────────────────────────────────────╯
+
+ctrl - down : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ctrl - up : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+#╭────────────────────────────────────────────────────────────────────────╮
+#│ Adds the active window to the window/stack in the specified direction. │
+#│ It creates a stack if one does not already exist.                      │
+#╰────────────────────────────────────────────────────────────────────────╯
+
+cmd + ctrl - left : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - escape : yabai -m window --toggle float && yabai -m window --toggle float
+
+#╔════════════════════════════╗
+#║ ╭────────────────────────╮ ║
+#║ │          Misc          │ ║
+#║ ╰────────────────────────╯ ║
+#╚════════════════════════════╝
+
+#╭──────────────────────────────────────────────────────────────────────────────╮
+#│ Remapping fn + h/j/k/l to the standard arrow keys, for global vim navigation │
+#╰──────────────────────────────────────────────────────────────────────────────╯
+
+fn - h : skhd -k "left"
+fn - j: skhd -k "down"
+fn - k : skhd -k "up"
+fn - l: skhd -k "right"
+
+# vim: ft=sh
