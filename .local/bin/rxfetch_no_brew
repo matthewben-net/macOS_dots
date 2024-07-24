@@ -201,8 +201,8 @@ get_shell() {
 
 get_term() {
 	case $TERM_PROGRAM in
-		"Terminal.app" | "Apple_Terminal") term="Apple Terminal";;
-		"iTerm.app") term="iTerm2";;
+		"Terminal.app" | "Apple_Terminal") printed_term="Apple Terminal";;
+		"iTerm.app") printed_term="iTerm2";;
 		*) printed_term="${TERM_PROGRAM%.app}";;
 	esac
 }
@@ -269,6 +269,7 @@ get_uptime() {
 #║ ╰─────────────────────────────────────────────────────────────────────────╯ ║
 #╚═════════════════════════════════════════════════════════════════════════════╝
 
+check_for_jankyborders
 get_username
 get_distro_name
 get_kernel
@@ -277,7 +278,7 @@ get_term
 get_wm
 get_mem
 get_uptime
-check_for_jankyborders
+
 #╔═════════════════════════════════════════════════╗
 #║ ╭─────────────────────────────────────────────╮ ║
 #║ │          Printing the actual fetch          │ ║

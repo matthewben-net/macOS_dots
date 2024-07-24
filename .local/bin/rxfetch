@@ -208,8 +208,8 @@ get_shell() {
 
 get_term() {
 	case $TERM_PROGRAM in
-		"Terminal.app" | "Apple_Terminal") term="Apple Terminal";;
-		"iTerm.app") term="iTerm2";;
+		"Terminal.app" | "Apple_Terminal") printed_term="Apple Terminal";;
+		"iTerm.app") printed_term="iTerm2";;
 		*) printed_term="${TERM_PROGRAM%.app}";;
 	esac
 }
@@ -304,6 +304,7 @@ get_uptime() {
 #║ ╰─────────────────────────────────────────────────────────────────────────╯ ║
 #╚═════════════════════════════════════════════════════════════════════════════╝
 
+check_for_jankyborders
 get_username
 get_cpu
 get_distro_name
@@ -335,6 +336,6 @@ echo -e "   ${bc}│ ${tc8} pkgs ${bc}│  ${ac4}:_______\`-; ${bc}│  ${tc0
 echo -e "   ${bc}│ ${tc9} ram  ${bc}│   ${ac5}\`._.-._.'  ${bc}│  ${tc0}${printed_mem}"
 echo -e "   ${bc}│ ${tc10} up   ${bc}│              │  ${tc0}${printed_up}"
 echo -e "   ${bc}├────────┴──────────────┤"
-echo -e "   ${bc}│       ${tc11} colors        ${bc}│  ${tc3}⬤  ${tc9}⬤  ${tc11}⬤  ${tc8}⬤  ${tc5}⬤  ${tc10}⬤  ${tc4}⬤  ${tc1}⬤ "
+echo -e "   ${bc}│       ${tc11} colors        ${bc}│  ${tc3}⬤  ${tc9}⬤  ${tc11}⬤  ${tc8}⬤  ${tc5}⬤  ${tc10}⬤  ${tc4}⬤  ${tc1}⬤  ${bc}⬤ "
 echo -e "   ${bc}╰───────────────────────╯${cr}"
 echo " "
