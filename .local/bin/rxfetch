@@ -226,6 +226,10 @@ get_wm() {
 		-e "[c]hun[k]wm" \
 		-e "[y]abai" \
 		-e "[R]ectangle" | head -n1)"
+
+	if [ -z "$printed_wm" ]; then
+        	printed_wm="Aqua"
+	fi
 }
 
 #╭──────────────────────────────────────────────────────╮
