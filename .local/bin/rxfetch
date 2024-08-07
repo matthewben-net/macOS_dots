@@ -96,38 +96,33 @@ extract_standard_hex_numbers() {
 
 # Check for jankyborder installation and set the border color to the first active color found
 check_for_jankyborders() {
-	jankyborders_service_status=$(brew services list | grep borders | awk '{ print $2}')
 	bordersrc_file_path="$HOME/.config/borders/bordersrc"
 	if which borders >/dev/null 2>&1; then
 		if [ -f "$bordersrc_file_path" ]; then
-			if [ "$jankyborders_service_status" = "started" ]; then
-				# Search for the active_color line and extract the color
-				active_color_line=$(grep 'active_color=' "$bordersrc_file_path" | head -n 1)
-				if echo "$active_color_line" | grep -q "top_left"; then
-					# Extract the color value between double quotes
-					argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="gradient(top_left=//; s/,.*//')
-					extract_standard_hex_numbers
-					colprint $standard_hex_num
-					bc=${ansi_color}
-				# Check if "top_right" is present in color_line
-				elif echo "$active_color_line" | grep -q "top_right"; then
-					argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="gradient(top_right=//; s/,.*//')
-					extract_standard_hex_numbers
-					colprint $standard_hex_num
-					bc=${ansi_color}
-				elif echo "$active_color_line" | grep -q "glow"; then
-					argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="glow(\(.*\))"/\1/')
-					extract_standard_hex_numbers
-					colprint $standard_hex_num
-					bc=${ansi_color}
-				else
-					argb_hex_color=$(echo "$active_color_line" | sed 's/.*\(0x[a-fA-F0-9]\{8\}\).*/\1/')
-					extract_standard_hex_numbers
-					colprint $standard_hex_num
-					bc=${ansi_color}
-				fi
+			# Search for the active_color line and extract the color
+			active_color_line=$(grep 'active_color=' "$bordersrc_file_path" | head -n 1)
+			if echo "$active_color_line" | grep -q "top_left"; then
+				# Extract the color value between double quotes
+				argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="gradient(top_left=//; s/,.*//')
+				extract_standard_hex_numbers
+				colprint $standard_hex_num
+				bc=${ansi_color}
+			# Check if "top_right" is present in color_line
+			elif echo "$active_color_line" | grep -q "top_right"; then
+				argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="gradient(top_right=//; s/,.*//')
+				extract_standard_hex_numbers
+				colprint $standard_hex_num
+				bc=${ansi_color}
+			elif echo "$active_color_line" | grep -q "glow"; then
+				argb_hex_color=$(echo "$active_color_line" | sed 's/.*active_color="glow(\(.*\))"/\1/')
+				extract_standard_hex_numbers
+				colprint $standard_hex_num
+				bc=${ansi_color}
 			else
-				bc=${muave_latte}
+				argb_hex_color=$(echo "$active_color_line" | sed 's/.*\(0x[a-fA-F0-9]\{8\}\).*/\1/')
+				extract_standard_hex_numbers
+				colprint $standard_hex_num
+				bc=${ansi_color}
 			fi
 		else
 			bc=${muave_latte}
