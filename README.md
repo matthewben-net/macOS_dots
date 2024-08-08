@@ -33,6 +33,32 @@
 ---
 
 <div align="center">
+  <h2>Screenshots</h2>
+</div>
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/goto_meshcommander.png" width="45%"></img> &ensp; &ensp; <img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/yabai_tiled.png" width="45%"></img>
+
+<img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/tmux_tex_nvim_tdf.png" width="45%"></img> &ensp; &ensp; <img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/yabai_float.png" width="45%"></img>
+
+<img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/yabai_stack_stackline.png" width="45%"></img> &ensp; &ensp; <img src="https://github.com/matthewben-net/macOS_dots/blob/main/Media/screenshots/rice/yazi.png" width="45%"></img>
+
+</div>
+
+### Notable TUI Applications
+
+* [Yazi](https://github.com/sxyazi/yazi): a terminal-based file manager
+* [Goto](https://github.com/grafviktor/goto): a clean and simple ssh manager
+* [Bottom](https://github.com/ClementTsang/bottom): a sleek resource monitor
+* [Tdf](https://github.com/itsjunetime/tdf): a terminal-based PDF viewer (this is more for fun, I mainly use Zathura for PDF needs)
+* [Browsh](https://github.com/browsh-org/browsh): a full-fat modern browser, rendered in the terminal (also just for fun)
+
+---
+
+<div align="center">
   <h2>Sketchybar Features</h2>
 </div>
 
