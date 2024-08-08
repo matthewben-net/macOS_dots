@@ -1,5 +1,14 @@
 <div align="center">
+  
   <h1> macOS Dotfiles</h1>
+
+<br>
+
+  <a href="#applications-used"><kbd> <br> Applications Used <br> </kbd></a>&ensp;&ensp;
+  <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
+  <a href="#sketchybar-features"><kbd> <br> Sketchybar Features <br> </kbd></a>&ensp;&ensp;
+  <a href="#rxfetch-features"><kbd> <br> Rxfetch Features <br> </kbd></a>&ensp;&ensp;
+
 </div>
 
 <br>
@@ -10,31 +19,25 @@
 
 <br>
 
-<div align="center">
-  <h2>Applications Used</h2>
-</div>
+## Applications Used
 
 * [Sketchybar](https://github.com/felixkratz/sketchybar/) (via the new [lua](https://github.com/FelixKratz/SbarLua) wrapper)
 * [JankyBorders](https://github.com/felixkratz/jankyborders/) for window borders
-* [Yabai](https://github.com/koekeishiya/yabai/) as the window manager
-* [Karabiner Elements](https://karabiner-elements.pqrs.org/) for turning capslock into hyper
+* [Yabai](https://github.com/koekeishiya/yabai/) as my window manager
+* [Karabiner Elements](https://karabiner-elements.pqrs.org/) to turn capslock into a hyper key
 * [Skhd](https://github.com/koekeishiya/skhd) for keyboard shortcuts
-* [Hammerspoon](https://www.hammerspoon.org/) with the [stackline](https://github.com/AdamWagner/stackline/) plugin for keeping track of my position in a window stack
+* [Hammerspoon](https://www.hammerspoon.org/) with the [stackline](https://github.com/AdamWagner/stackline/) plugin to get a visual on the other apps present in a stack
 * [SlimHUD](https://github.com/AlexPerathoner/SlimHUD) for my keyboard/screen brightness and volume overlays
-* [Displaperture](https://manytricks.com/displaperture/) for rounding the edges of the screen
+* [Displaperture](https://manytricks.com/displaperture/) to round the corners of my screen
 * [BetterTouchTool](https://folivora.ai/) for turning the touchbar into a useable control panel for both Yabai and Sketchybar
-* [Mousecape](https://github.com/alexzielenski/Mousecape) for changing the stock macOS cursor
+* [Mousecape](https://github.com/alexzielenski/Mousecape) to change the stock macOS cursor
 * [Macforge](https://github.com/MacEnhance/MacForge) for miscellaneous tweaks, mainly using the two plugins outlined below:
   * PaintCan for theming Finder/everything else with .carr files
   * MeMiniMe for saving screen-real-estate by forcing all window toolbars to be drawn with the NSWindowToolbarStyleUnifiedCompact option
 
 <br>
 
----
-
-<div align="center">
-  <h2>Screenshots</h2>
-</div>
+## Screenshots
 
 <br>
 
@@ -48,7 +51,9 @@
 
 </div>
 
-### Notable TUI Applications
+<div align="center">
+  <h3>Notable TUI Applications</h3>
+</div>
 
 * [Yazi](https://github.com/sxyazi/yazi): a terminal-based file manager
 * [Goto](https://github.com/grafviktor/goto): a clean and simple ssh manager
@@ -56,13 +61,13 @@
 * [Tdf](https://github.com/itsjunetime/tdf): a terminal-based PDF viewer (this is more for fun, I mainly use Zathura for PDF needs)
 * [Browsh](https://github.com/browsh-org/browsh): a full-fat modern browser, rendered in the terminal (also just for fun)
 
----
+<br>
+
+## Sketchybar Features
 
 <div align="center">
-  <h2>Sketchybar Features</h2>
+  <h3>App Name/App Title</h3>
 </div>
-
-### App name/App title
 
 <br>
 
@@ -76,7 +81,9 @@ Toggle between showing the name of the currently focused app, or the title if ap
 
 <br>
 
-### Space Management
+<div align="center">
+  <h3>Space Management</h3>
+</div>
 
 <br>
 
@@ -107,17 +114,17 @@ Left clicking on a space focuses it, right clicking on a space destroys it, and 
 
 <br>
 
-<br>
-
-I've tried to make extensive use of Sketchybar’s animation features, ensuring that any element capable of movement is animated rather than simply toggling statically between states. For colors, I'm using the [Catppuccin](https://github.com/catppuccin/catppuccin) Mocha palette. For icons, the SF Symbols font is used for everything in both Sketchybar and my BTT preset, aside from the vertical ellipsis used in the sketchybar menu-toggle button.
-
-<br>
-
 ---
 
-<div align="center">
-  <h2>Rxfetch Features</h2>
-</div>
+I've tried to make extensive use of Sketchybar’s animation features, ensuring that any element capable of movement is animated rather than simply toggling statically between states.
+
+For colors, I'm using the [Catppuccin](https://github.com/catppuccin/catppuccin) Mocha palette.
+
+For icons, the SF Symbols font is used for everything in both Sketchybar and my BTT preset, aside from the vertical ellipsis used in the sketchybar menu-toggle button.
+
+<br>
+
+## Rxfetch Features
 
 <br>
 
