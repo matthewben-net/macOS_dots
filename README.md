@@ -14,7 +14,9 @@
 <br>
 
 <div align="center">
-  <video source src="https://github.com/user-attachments/assets/b67560cd-674d-4414-a675-cfc9a2e6122e" type="video/mp4"/>
+
+  <video source src="https://github.com/user-attachments/assets/7b06b38c-a9e5-450c-a931-d065e377d8e9" type="video/mp4"/>
+
 </div>
 
 <br>
